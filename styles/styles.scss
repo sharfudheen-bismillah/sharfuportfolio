@@ -388,9 +388,16 @@ section {
     perspective: 1500px;
 }
 
+.cat-1 { background: linear-gradient(135deg, #4e54c8, #7b2ff7); }
+.cat-2 { background: linear-gradient(135deg, #eb3349, #f45c43); }
+.cat-3 { background: linear-gradient(135deg, #11998e, #38ef7d); }
+.cat-4 { background: linear-gradient(135deg, #ff9966, #ff5e62); }
+.cat-5 { background: linear-gradient(135deg, #396afc, #2948ff); }
+.cat-6 { background: linear-gradient(135deg, #834d9b, #d04ed6); }
+
 .project-card {
     position: relative;
-    height: 320px;
+    height: 340px;
     cursor: pointer;
     opacity: 0;
     transform: translateY(30px);
@@ -423,33 +430,31 @@ section {
     }
     .project-front {
         display: flex;
-        align-items: flex-end;
-        img {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        flex-direction: column;
+    }
+    .project-icon-panel {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        i {
+            font-size: 4.2rem;
+            color: rgba(255, 255, 255, .55);
             transition: transform .6s ease;
         }
-        &::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, rgba(0,0,0,0) 35%, rgba(0,0,0,.85) 100%);
-        }
     }
-    &:hover .project-front img {
-        transform: scale(1.08);
+    &:hover .project-icon-panel i {
+        transform: scale(1.12) rotate(-4deg);
     }
-    .project-front-overlay {
-        position: relative;
-        z-index: 1;
-        padding: 1.25rem;
-        color: var(--color-white);
+    .project-text-panel {
+        background: rgba(10, 12, 20, .94);
+        padding: 1rem 1.25rem 1.1rem;
+        color: #ffffff;
         h3 {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             margin-bottom: .4rem;
+            color: #ffffff;
         }
     }
     .project-tag {
@@ -465,16 +470,17 @@ section {
         margin-bottom: .6rem;
     }
     .project-tagline {
-        font-size: .85rem;
-        line-height: 1.3rem;
-        opacity: .9;
+        font-size: .82rem;
+        line-height: 1.25rem;
+        color: #ffffff;
+        opacity: .85;
     }
     .flip-hint {
         position: absolute;
         top: 1rem;
         right: 1rem;
         z-index: 1;
-        background: rgba(0,0,0,.45);
+        background: rgba(0,0,0,.4);
         color: var(--color-white);
         font-size: .7rem;
         padding: .35rem .6rem;
